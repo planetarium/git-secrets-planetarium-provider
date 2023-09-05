@@ -15,7 +15,7 @@ chmod +x ~/.planetarium/fetch-patterns.sh
 
 git secrets --add-provider --global ~/.planetarium/fetch-patterns.sh
 
-GIT_TEMPLATE_DIR="~/.git-templates/git-secrets"
+GIT_TEMPLATE_DIR="$HOME/.git-templates/git-secrets"
 mkdir -p $GIT_TEMPLATE_DIR
 git secrets --install ~/.git-templates/git-secrets
 
@@ -26,7 +26,7 @@ TARGET_DIR=$(eval echo $input_dir)
 echo "$TARGET_DIR 폴더 하위에 모든 .git 폴더에 git secrets --install을 실행합니다."
 
 find "$TARGET_DIR" -type d -name ".git" | while read repo; do
-  echo "$repo에 설치 중"
+  echo "$repo 에 설치 중"
   git secrets --install "$repo/.."
 done
 
