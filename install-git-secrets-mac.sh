@@ -20,7 +20,6 @@ mkdir -p $GIT_TEMPLATE_DIR
 git secrets --install ~/.git-templates/git-secrets
 
 git config --global init.templateDir $GIT_TEMPLATE_DIR
-git secrets --register-aws --global
 
 read -p "git-secrets의 hooks를 설치할 최상위 디렉토리 경로를 입력하세요. 하위 디렉토리에 .git 폴더를 찾아 전부 설치합니다.: " input_dir
 TARGET_DIR=$(eval echo $input_dir)
